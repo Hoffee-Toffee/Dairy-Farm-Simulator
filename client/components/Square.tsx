@@ -1,11 +1,32 @@
 import { useState, useEffect } from 'react'
 
 function Square(prop) {
-  const { startingState } = prop
-  const [state, setState] = useState(startingState)
+  const { state, index, grid, setGrid } = prop
 
   const handleClick = () => {
-    setState('cow')
+    if (state == 'ufo') {
+      const newGrid = [...grid]
+      // make array of cow index's
+      const cows = []
+
+      grid.forEach((state, index) => {
+        if (state === 'cow') {
+          cows.push(index)
+        }
+      })
+
+      //Pick random cow index
+
+      const ufoIndex = cows[Math.floor(Math.random() * cows.length)]
+      newGrid[ufoIndex] = 'ufo'
+
+      // Change this square back to a cow
+      newGrid[index] = 'cow'
+
+      // console.log(grid[ufoIndex])
+      // console.log(grid[index])
+      setGrid(newGrid)
+    }
   }
 
   // const handleDoubleClick = () => {

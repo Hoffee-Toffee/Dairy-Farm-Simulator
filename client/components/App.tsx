@@ -29,15 +29,13 @@ function App() {
   const ufoIndex = cows[Math.floor(Math.random() * cows.length)]
   gridStates[ufoIndex] = 'ufo'
 
-  console.log(cows)
-  console.log(ufoIndex)
+  const [grid, setGrid] = useState(gridStates)
 
-  squares = squares.map((square, index) => (
-    <Square startingState={gridStates[index]} />
+  console.log(grid)
+
+  squares = grid.map((square, index) => (
+    <Square state={square} index={index} grid={grid} setGrid={setGrid} />
   ))
-
-  const [grid, setGrid] = useState(squares)
-  console.log(gridStates)
 
   return (
     <>
