@@ -1,5 +1,114 @@
 body {
-  background-color: #faf8f1;
-  color: #0a1520;
-  font-family: 'Poppins', sans-serif;
+background: url('../public/img/grassField.jpg');
+background-repeat: repeat;
+margin: 0;
+padding: 0;
+}
+
+:root { 
+  --primaryColor: #92fae0;
+  --secondaryColor: #217500;
+  --displayFont: 'Orbitron', sans-serif;
+  --altFont: 'Pixelify Sans', sans-serif;
+}
+
+.main {
+  height: 200vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.header-logo{
+  font-family: var(--displayFont);
+  font-weight: 700;
+  font-size: 3em;
+  color: var(--secondaryColor);
+  text-shadow: 3px 3px var(--primaryColor);
+  padding-left: 1em;
+}
+
+.header__scores{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  font-family: var(--altFont);
+  font-size: 2em;
+  font-weight: 500;
+  padding-right: 1em;
+}
+
+.game{
+  height: 90vh;
+}
+
+.post-match{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: #e9e9e9;
+}
+
+.post-match__form{
+  flex-basis: 45%;
+}
+
+.post-match__leaderboard{
+  flex-basis: 45%;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-match__header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-match__headers{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  /* width: 100%; */
+}
+
+.post-match-header{
+  font-family: var(--displayFont);
+}
+
+.post-match-title{
+  font-family: var(--displayFont);
+}
+
+.post-match-leaderboard{
+  margin: 0;
+  padding: 0;
+}
+
+.post-match__item{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.post-match-item {
+  font-family: var(--altFont);
 }
