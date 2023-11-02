@@ -1,9 +1,12 @@
+import Square from './Square'
+
 function App() {
+  const squares = Array(400).fill(<Square />)
+
   return (
-    <div>
-      <h1>App</h1>
-      <p>React development has begun!</p>
-    </div>
+    <>
+      <div id="grid">{...squares}</div>
+    </>
   )
 }
 
