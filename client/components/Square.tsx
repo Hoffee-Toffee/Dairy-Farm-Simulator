@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 
-function Square() {
-  const [image, setImage] = useState('')
+function Square(prop) {
+  const { startingState } = prop
+  const [state, setState] = useState(startingState)
 
   const handleClick = () => {
-    // setColor('green')
+    setState('cow')
   }
 
   // const handleDoubleClick = () => {
@@ -28,11 +29,15 @@ function Square() {
     <div
       id="square"
       onClick={handleClick}
+      style={{
+        margin: '5px',
+      }}
+
       // onDoubleClick={handleDoubleClick}
       // onDragEnter={handleMouseDrag}
       // onContextMenu={handleRightClick}
     >
-      Square
+      {state}
     </div>
   )
 }
