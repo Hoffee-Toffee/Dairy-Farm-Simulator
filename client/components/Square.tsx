@@ -29,6 +29,12 @@ function Square(prop) {
     }
   }
 
+  const images = {
+    cow: '',
+    ufo: '../public/img/ufo.gif',
+    empty: '',
+  }
+
   // const handleDoubleClick = () => {
   //   setColor('white')
   // }
@@ -45,10 +51,13 @@ function Square(prop) {
   //  useEffect(() => {
   //   setInterval(2)
   //  })
+  
 
   return (
-    <div
+    <img
+    src={images[state]}
       id="square"
+      className={state}
       onClick={handleClick}
       style={{
         margin: '5px',
@@ -58,8 +67,8 @@ function Square(prop) {
       // onDragEnter={handleMouseDrag}
       // onContextMenu={handleRightClick}
     >
-      {state}
-    </div>
+      {/* {state} */}
+    </img>
   )
 }
 
