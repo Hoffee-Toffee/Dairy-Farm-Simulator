@@ -5,7 +5,7 @@ import moo from '../../public/sounds/cow-moos-76219.mp3'
 import ufo from '../../public/sounds/ufo-fx-154829.mp3'
 
 function App() {
-  const gridLength = 400
+  const gridLength = 300
   const cowNum = 20
 
   let squares = Array(gridLength).fill(0)

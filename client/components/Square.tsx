@@ -71,8 +71,9 @@ function Square(prop) {
   //  })
 
   return (
-    <img
-      src={images[state]}
+  
+    <div
+
       id="square"
       className={state}
       onClick={handleClick}
@@ -85,7 +86,7 @@ function Square(prop) {
       // onContextMenu={handleRightClick}
     >
       {/* {state} */}
-    </img>
+    </div>
   )
 }
 
