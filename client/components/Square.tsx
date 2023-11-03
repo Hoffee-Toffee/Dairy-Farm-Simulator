@@ -12,7 +12,9 @@ function Square(prop) {
     setTimeout(() => {
       if (!clicked) {
         setGrid([])
-        playSound(lostSound)
+        playSound(lostSound, 1, false, true)
+        window.timeout = true
+
         console.log('you lose')
       }
     }, 5000)
@@ -43,7 +45,7 @@ function Square(prop) {
       // console.log(grid[index])
       setGrid(newGrid)
     } else if (state === 'cow') {
-      playSound(milked, true)
+      playSound(milked, 1, true)
     }
   }
 
@@ -71,9 +73,7 @@ function Square(prop) {
   //  })
 
   return (
-  
     <div
-
       id="square"
       className={state}
       onClick={handleClick}

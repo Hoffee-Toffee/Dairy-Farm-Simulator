@@ -4,6 +4,8 @@ import { useState } from 'react'
 import moo from '../../public/sounds/cow-moos-76219.mp3'
 import ufo from '../../public/sounds/ufo-fx-154829.mp3'
 
+window.timeout = false
+
 function App() {
   const gridLength = 300
   const cowNum = 20
@@ -53,11 +55,14 @@ function App() {
     }
   }, 14000)
 
-  const ufoSounds = setInterval(() => {
-    if (grid.length) {
-      playSound(ufo)
-    }
-  }, 13000)
+  setTimeout(() => {
+    const ufoSounds = setInterval(() => {
+      if (grid.length) {
+        playSound(ufo)
+      }
+    }, 10000)
+  }, 2000)
+
   return (
     <>
       <div id="grid" style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -67,13 +72,22 @@ function App() {
   )
 }
 
-function playSound(link, timeout = false) {
+function playSound(link, volume = 0.2, timeout = false, last = false) {
   const audio = new Audio(link)
+  audio.volume = volume
   audio.play()
   if (timeout) {
     setTimeout(() => {
       audio.pause()
     }, 4000)
+  }
+
+  if (!last) {
+    setInterval(() => {
+      if (audio.volume != 0 && window.timeout) {
+        audio.volume = 0
+      }
+    }, 80)
   }
 }
 
