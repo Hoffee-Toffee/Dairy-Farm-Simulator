@@ -52,11 +52,9 @@ function Square(prop) {
   //   setInterval(2)
   //  })
 
-
   return (
-  
     <div
-    src={images[state]}
+      src={images[state]}
       id="square"
       className={state}
       onClick={handleClick}
