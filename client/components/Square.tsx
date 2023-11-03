@@ -1,10 +1,26 @@
 import { useState, useEffect } from 'react'
 
+import lostSound from '../../public/sounds/ufo-landing-93632.mp3'
+import milked from '../../public/sounds/milking-a-cow-22255.mp3'
+
 function Square(prop) {
-  const { state, index, grid, setGrid } = prop
+  const { state, index, grid, setGrid, playSound } = prop
+
+  let clicked = false
+
+  if (state === 'ufo') {
+    setTimeout(() => {
+      if (!clicked) {
+        setGrid([])
+        playSound(lostSound)
+        console.log('you lose')
+      }
+    }, 5000)
+  }
 
   const handleClick = () => {
     if (state == 'ufo') {
+      clicked = true
       const newGrid = [...grid]
       // make array of cow index's
       const cows = []
@@ -26,6 +42,8 @@ function Square(prop) {
       // console.log(grid[ufoIndex])
       // console.log(grid[index])
       setGrid(newGrid)
+    } else if (state === 'cow') {
+      playSound(milked, true)
     }
   }
 
@@ -52,11 +70,10 @@ function Square(prop) {
   //   setInterval(2)
   //  })
 
-
   return (
   
     <div
-    src={images[state]}
+
       id="square"
       className={state}
       onClick={handleClick}
