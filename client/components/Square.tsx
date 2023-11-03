@@ -71,8 +71,8 @@ function Square(prop) {
   //  })
 
   return (
-  
     <div
+      src={images[state]}
 
       id="square"
       className={state}

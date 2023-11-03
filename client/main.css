@@ -8,6 +8,7 @@ padding: 0;
 :root { 
   --primaryColor: #92fae0;
   --secondaryColor: #217500;
+  --thirdColor: #fface3;
   --displayFont: 'Orbitron', sans-serif;
   --altFont: 'Pixelify Sans', sans-serif;
 }
@@ -61,11 +62,74 @@ padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background: #e9e9e9;
+  background: var(--primaryColor);
 }
 
 .post-match__form{
   flex-basis: 45%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-match-form__score{
+  list-style-type: none;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.post-match-form-score{
+  font-family: var(--altFont);
+  font-size: 1.5em;
+}
+
+.post-match-form-header{
+  font-family: var(--displayFont);
+  font-size: 2em;
+  color: var(--thirdColor);
+  text-shadow: 3px 3px var(--secondaryColor);
+}
+
+.post-match-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.post-match-form-btn{
+  width: 50%;
+  padding: 0.5em 1.5em;
+  border-radius: 30px;
+  border: 0;
+  background: var(--thirdColor);
+  font-family: var(--altFont);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+
+.post-match-form label {
+  font-family: var(--displayFont);
+  font-size: 1.5em;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.post-match-form input {
+  margin-left: 2em;
+  padding-left: 2em;
+  border-radius: 30px;
+  border: none;
+  background: var(--thirdColor);
+  font-family: var(--altFont);
 }
 
 .post-match__leaderboard{
@@ -73,6 +137,7 @@ padding: 0;
   align-items: center;
   height: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -81,37 +146,61 @@ padding: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
 }
 
 .post-match__headers{
   display: flex;
   flex-direction: row;
-  gap: 1em;
-  /* width: 100%; */
+  /* gap: 3em; */
+  width: 100%;
+  justify-content: space-between;
+  /* align-items: center; */
+  border: solid 2px ;
+  border-top: 0;
 }
 
 .post-match-header{
   font-family: var(--displayFont);
+  flex-basis: 25%;
+  /* align-self: center */
+  text-align: left;
+  margin: 0;
+  padding: 1em 0em 1em 0.5em;
 }
 
 .post-match-title{
+  margin: 0;
+  padding: 1em 0em 1em 0em;
   font-family: var(--displayFont);
+  font-size: 2em;
+  color: var(--thirdColor);
+  text-shadow: 3px 3px var(--secondaryColor);
+  width: 100%;
+  text-align: center;
+  border: solid 2px black;
 }
 
 .post-match-leaderboard{
   margin: 0;
   padding: 0;
+  width: 90%;
 }
 
 .post-match__item{
+  width: 100%;
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  justify-content: space-between;
 }
 
 .post-match-item {
   font-family: var(--altFont);
+  font-size: 1.5em;
+  flex-basis: 25%;
+  text-align: left;
+  padding-left: 0.5em;
 }
 
 #square{
@@ -125,6 +214,11 @@ padding: 0;
   width: 100%;
   height: auto;
 }
+/* 
+
+ @keyframes fade-out-top{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-50px);opacity:0}}
+
+.fade-out-top{animation:fade-out-top 4s cubic-bezier(.25,.46,.45,.94) both} */
 
 .ufo {
   background: url('/public/img/cow-jam.gif');
