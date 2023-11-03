@@ -51,10 +51,11 @@ function Square(prop) {
   //  useEffect(() => {
   //   setInterval(2)
   //  })
-  
+
 
   return (
-    <img
+  
+    <div
     src={images[state]}
       id="square"
       className={state}
@@ -68,7 +69,7 @@ function Square(prop) {
       // onContextMenu={handleRightClick}
     >
       {/* {state} */}
-    </img>
+    </div>
   )
 }
 

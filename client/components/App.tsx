@@ -2,7 +2,7 @@ import Square from './Square'
 import { useState } from 'react'
 
 function App() {
-  const gridLength = 400
+  const gridLength = 300
   const cowNum = 20
 
   let squares = Array(gridLength).fill(0)
