@@ -44,6 +44,7 @@ padding: 0;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1em;
   font-family: var(--altFont);
   font-size: 2em;
