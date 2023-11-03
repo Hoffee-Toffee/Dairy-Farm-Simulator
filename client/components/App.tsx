@@ -1,10 +1,19 @@
 import Square from './Square'
+import Header from './Header'
+import Leaderboard from './Leaderboard'
+
 import { useState } from 'react'
 
 import moo from '../../public/sounds/cow-moos-76219.mp3'
 import ufo from '../../public/sounds/ufo-fx-154829.mp3'
 
 window.timeout = false
+window.score = {
+  name: 'Guest',
+  score: 0,
+  milk: 0,
+  time: 0,
+}
 
 function App() {
   const gridLength = 300
@@ -65,9 +74,12 @@ function App() {
 
   return (
     <>
+      <Header />
+      {/* <p>{JSON.stringify(window.score)}</p> */}
       <div id="grid" style={{ display: 'flex', flexWrap: 'wrap' }}>
         {...squares}
       </div>
+      <Leaderboard />
     </>
   )
 }
