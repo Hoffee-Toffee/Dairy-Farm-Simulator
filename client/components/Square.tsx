@@ -41,11 +41,20 @@ function Square(prop) {
       // Change this square back to a cow
       newGrid[index] = 'cow'
 
+      window.score = {
+        ...window.score,
+        score: window.score.score + 100,
+      }
+
       // console.log(grid[ufoIndex])
       // console.log(grid[index])
       setGrid(newGrid)
     } else if (state === 'cow') {
       playSound(milked, 1, true)
+      window.score = {
+        ...window.score,
+        milk: window.score.milk + 1,
+      }
     }
   }
 
@@ -75,7 +84,6 @@ function Square(prop) {
   return (
     <div
       src={images[state]}
-
       id="square"
       className={state}
       onClick={handleClick}
